@@ -15,21 +15,16 @@ log.setLevel(logging.ERROR)
 from config import config
 from layout import layout
 from util import check_if_not_running
+from canned_functions import *
+from rest_classes import *
 
 server = flask.Flask(__name__)
 app = dash.Dash(__name__, server=server)
 app.title= config.get('app_title', 'app')
 app.layout = layout
 
-# REST API SECTION
-#class TestClass(Resource):
-#    def get(self, x):
-#        import json
-#        return json.dumps('test class '+str(x))
-
-
 api = Api(server)
-#api.add_resource(TestClass, '/test/<string:x>')
+#api.add_resource(RestClass, '/url_for_rest/<string:x>')
 
 
 if __name__ == '__main__':
