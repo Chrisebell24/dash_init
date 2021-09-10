@@ -36,3 +36,5 @@ if __name__ == '__main__':
     if check_if_not_running(port):
         #launch app
         app.run_server(debug=False, host='0.0.0.0', port=port)
+        # command line to start - replace port with number
+        # gunicorn app:server -w 1 -b 0.0.0.0:port
